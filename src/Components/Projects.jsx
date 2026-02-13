@@ -28,8 +28,9 @@ export default function Projects() {
 
   return (
     <section className="w-full">
-      <h2 className="text-xl font-bold uppercase tracking-wider text-center mb-4">
+       <h2 className="group relative text-xl font-bold uppercase tracking-wider text-center mb-4">
         Projects
+        <span className="absolute bottom-0 left-0 h-[2px] w-full bg-white scale-x-0 group-hover:scale-x-100 origin-center transition-transform duration-300 ease-in-out"></span>
       </h2>
 
       <div className="flex flex-col gap-3">

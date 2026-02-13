@@ -4,9 +4,10 @@ function Summary() {
   return (
     <section className='w-full'>
          <div className="bg-[#111111] border border-gray-800 rounded-xl p-4 hover:border-gray-600 transition-all duration-200">
-        <h2 className="text-sm font-bold uppercase tracking-wider text-center mb-3">
-          Summary
-        </h2>
+         <h2 className="group relative text-xl font-bold uppercase tracking-wider text-center mb-4">
+        Skills
+        <span className="absolute bottom-0 left-0 h-[2px] w-full bg-white scale-x-0 group-hover:scale-x-100 origin-center transition-transform duration-300 ease-in-out"></span>
+      </h2>
         <p className="text-sm text-gray-400 leading-relaxed">
           Computer Applications student with hands-on experience in full-stack web development 
           and building responsive applications. Proficient in JavaScript, React.js, Node.js, 
