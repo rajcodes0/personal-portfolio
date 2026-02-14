@@ -5,7 +5,7 @@ function Summary() {
     <section className='w-full'>
          <div className="bg-[#111111] border border-gray-800 rounded-xl p-4 hover:border-gray-600 transition-all duration-200">
          <h2 className="group relative text-xl font-bold uppercase tracking-wider text-center mb-4">
-        Skills
+        Summary
         <span className="absolute bottom-0 left-0 h-[2px] w-full bg-white scale-x-0 group-hover:scale-x-100 origin-center transition-transform duration-300 ease-in-out"></span>
       </h2>
         <p className="text-sm text-gray-400 leading-relaxed">
