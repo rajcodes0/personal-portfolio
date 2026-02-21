@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./raj.jpg" alt="Raj Profile Picture" width="180" style="border-radius:50%;" />
+<img src="./raj.jpg" alt="Raj Profile Picture" width="180" style="border-radius:40px;" />
 
 # Rajkumar (Raj)
 
