@@ -1,7 +1,51 @@
 import React from "react";
 import { FaGithub, FaLinkedin, FaReddit, FaDiscord } from "react-icons/fa";
+import emailjs from '@emailjs/browser'
+import { useState } from "react";
+
+
 
 const Footer = () => {
+  const [formData,setFormData]  = useState({
+    user_name:"",
+    user_email:"",
+    message:"",
+  })
+  
+  const handleChange = (e) =>{
+   const {name,value} = e.target;
+   setFormData((prev) =>({
+      ...prev,
+      [name]: value,
+   }))
+  }
+
+  const handleSubmit = (e) => {
+  e.preventDefault();
+
+  emailjs
+    .send(
+      import.meta.env.VITE_SERVICE_ID,
+      import.meta.env.VITE_TEMPLATE_ID,
+      formData,
+      import.meta.env.VITE_PUBLIC_KEY
+    )
+    .then(
+      () =>{
+        alert("success message has been thrown");
+        setFormData({
+          user_name:"",
+          user_email:"",
+          message:""
+        });
+      },
+      (error) =>{
+        alert("message failed bro", error.text)
+        console.log(error)
+      }
+    )
+  }
+
   return (
     <footer className="bg-black text-white pt-8 flex flex-col">
       <div className="max-w-100 mx-auto px-6 m-10">
@@ -10,22 +54,31 @@ const Footer = () => {
             <h3 className="text-xl font-semibold mb-4 text-center">
               Message Me
             </h3>
-            <form className="space-y-4">
+            <form className="space-y-4" onSubmit={handleSubmit}>
               <input
                 type="text"
                 placeholder="Your Name"
                 className="w-full p-3 bg-gray-900 border border-gray-700 rounded-md focus:outline-none focus:border-white"
+                name = "user_name"
+                value={formData.user_name}
+                onChange={handleChange}
                 required
               />
               <input
                 type="email"
                 placeholder="Your Email"
+                 name = "user_email"
+                   onChange={handleChange}
+                  value={formData.user_email}
                 className="w-full p-3 bg-gray-900 border border-gray-700 rounded-md focus:outline-none focus:border-white"
                 required
               />
               <textarea
                 placeholder="Your Message"
                 rows="4"
+                name = "message"
+                 value={formData.message}  
+                   onChange={handleChange}
                 className="w-full p-3 bg-gray-900 border border-gray-700 rounded-md focus:outline-none focus:border-white"
                 required
               />
